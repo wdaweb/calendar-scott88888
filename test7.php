@@ -88,7 +88,7 @@ body{
 	margin: 0;
 	background-color: black;
 	color: white;
-	background-image: url(./background-p2.jpg);
+	background-image: url(https://scott20cc.000webhostapp.com/background-p3.jpg);
 	background-repeat: no-repeat;
     background-attachment : fixed;
     /* (設定背景附著 也就是浮動背景) */
