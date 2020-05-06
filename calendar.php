@@ -122,11 +122,6 @@ body{
 <?php 
 $ColArr=["#FF0000","#FF8000","#FFFF37","#00EC00","#4DFFFF","#66B3FF","#9F35FF","#4FFFFF","#C2C2FF","#FF9797","#223db9","#73BF00"];
 // 宣告陣列 放色碼
-if(isset($_GET["DateYear"])){
-    $DateYear=$_GET["DateYear"];
-  }else{
-    $DateYear=2019;
-}
 if(isset($_GET["ColNum"])){
     $ColNum=$_GET["ColNum"];
   }else{
@@ -245,7 +240,7 @@ if(isset($_GET["mon"])){
         "1231"=>"受信節"];
     $MonArr=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
     $MonNum=["1","2","3","4","5","6","7","8","9","10","11","12"];
-    if(isset($_GET['SelectYear']))$DateYear=$_GET['SelectYear'][0];
+    if(isset($_GET['SelectYear']))$DateYear=$_GET['SelectYear'];
     $fDay = "$DateYear-$mon-$DateDay";
     $fDayWeek = date("w", strtotime($fDay));   //星期幾的數字表示（0 表示 Sunday[星期日]，6 表示 Saturday[星期六]）
     $fDayBS = date("t", strtotime($fDay));   //當月天數
@@ -299,7 +294,7 @@ echo "<span style=font-size:20px;>(" .$MonNum[$fDayMon-1] ."月)" ."</span>";
 <input type="color" name="ChangeColor" value="#a4ef65"/>
 <input type="submit" value="換色"/>
 <form action="calendar.php" method="get">
-<select id="SelectYear" name="SelectYear[]">
+<select id="SelectYear" name="SelectYear">
 <?php
 for($i=1900;$i<2101;$i++){
 $selected=$DateYear==$i?'selected="selected"':'';
@@ -317,8 +312,8 @@ if(isset($_GET['ChangeColor'])){
 // echo "<a>" ."現在的顏色是:▄▄▄▄▄▄" ."<br>"."色碼是".$ChangeColor ."</a>" ;
 ?>
 <div class="ButtonBox2">
-<div class="botBreathe"><a href="calendar.php?ColNum=<?=$numdel?>&mon=<?=$numdel?>">上個月</div></a>
-<div class="botBreathe"><a href="calendar.php?ColNum=<?=$numadd?>&mon=<?=$numadd?>" >下一個月</a></div>
+<div class="botBreathe"><a href="calendar.php?ColNum=<?=$numdel?>&mon=<?=$numdel?>&SelectYear=<?=$DateYear?>">上個月</div></a>
+<div class="botBreathe"><a href="calendar.php?ColNum=<?=$numadd?>&mon=<?=$numadd?>&SelectYear=<?=$DateYear?>" >下一個月</a></div>
 <!-- <div class="botBreathe"><a href="calendar.php?ColNum=<?=$mon;?>&mon=<?=$mon;?>">顯示是<?=$mon;?>月</div></a> -->
 </div>
 </body>
