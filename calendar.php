@@ -295,10 +295,10 @@ echo $MonArr[$fDayMon-1];
 echo "<span style=font-size:20px;>(" .$MonNum[$fDayMon-1] ."月)" ."</span>";
 ?>
 </div>
-<form action="test15.php" method="get">
+<form action="calendar.php" method="get">
 <input type="color" name="ChangeColor" value="#a4ef65"/>
 <input type="submit" value="換色"/>
-<form action="test15.php" method="get">
+<form action="calendar.php" method="get">
 <select id="SelectYear" name="SelectYear[]">
 <?php
 for($i=1900;$i<2101;$i++){
@@ -317,9 +317,9 @@ if(isset($_GET['ChangeColor'])){
 // echo "<a>" ."現在的顏色是:▄▄▄▄▄▄" ."<br>"."色碼是".$ChangeColor ."</a>" ;
 ?>
 <div class="ButtonBox2">
-<div class="botBreathe"><a href="test15.php?ColNum=<?=$numdel?>&mon=<?=$numdel?>">上個月</div></a>
-<div class="botBreathe"><a href="test15.php?ColNum=<?=$numadd?>&mon=<?=$numadd?>" >下一個月</a></div>
-<!-- <div class="botBreathe"><a href="test15.php?ColNum=<?=$mon;?>&mon=<?=$mon;?>">顯示是<?=$mon;?>月</div></a> -->
+<div class="botBreathe"><a href="calendar.php?ColNum=<?=$numdel?>&mon=<?=$numdel?>">上個月</div></a>
+<div class="botBreathe"><a href="calendar.php?ColNum=<?=$numadd?>&mon=<?=$numadd?>" >下一個月</a></div>
+<!-- <div class="botBreathe"><a href="calendar.php?ColNum=<?=$mon;?>&mon=<?=$mon;?>">顯示是<?=$mon;?>月</div></a> -->
 </div>
 </body>
 
